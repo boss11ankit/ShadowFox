@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-image: url('https://static.vecteezy.com/system/resources/previews/022/851/412/large_2x/hacker-in-virtual-world-generative-ai-photo.JPG'); /* Set your welcome background image here */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #fff;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .option {
+            background-color: rgba(0, 123, 255, 0.8);
+            color: white;
+            padding: 15px 20px;
+            margin: 10px;
+            border-radius: 10px;
+            text-align: center;
+            width: 250px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none; /* Ensure text decoration is consistent */
+        }
+
+        .option:hover {
+            background-color: rgba(0, 105, 217, 0.9);
+        }
+
+        .logout-link {
+            margin-top: 20px;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .logout-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome!</h1>
+    <div class="options-container">
+        <a href="file:///D:/SimpleLogin/aiproject.htm" class="option">Work on an AI Project</a>
+        <a href="file:///D:/SimpleLogin/processors.html" class="option">Processors</a>
+        <a href="file:///D:/SimpleLogin/software.html" class="option">Software</a>
+        <a href="file:///D:/SimpleLogin/gui.html" class="option">GUI Development</a>
+        <a href="file:///D:/SimpleLogin/pmainfest.html" class="option">Programming Manifestations</a>
+    </div>
+
+    <a href="login.html" class="logout-link">Logout</a>
+
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("https://assets.website-files.com/5d041594c6034342945cea6b/5de1bf1459d27b0bb51d09c6_green-data-curtain-min.jpg"); /* Replace with your image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Container for the login form */
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 300px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        input[type="text"]:focus, input[type="password"]:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            background-color: #28a745;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .error {
+            color: red;
+            margin-bottom: 10px;
+        }
+
+        /* Styling for Register link */
+        .register-link {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 20px;
+            color: #fff;
+            text-decoration: none; /* Ensure no underline */
+        }
+
+        .register-link:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+
+        /* Styling for Date and Time */
+        .date-time {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Register Link -->
+    <a href="file:///D:/SimpleLogin/register.html" class="register-link">Register</a>
+
+    <!-- Date and Time Container -->
+    <div id="date-time" class="date-time"></div>
+
+    <!-- Login Form Container -->
+    <div class="login-container">
+        <h2>Login</h2>
+        <div id="error-message" class="error"></div>
+        <form id="login-form">
+            <div class="input-field">
+                <input type="text" id="username" placeholder="Username">
+            </div>
+            <div class="input-field">
+                <input type="password" id="password" placeholder="Password">
+            </div>
+            <button type="button" onclick="validateLogin()">Login</button>
+        </form>
+    </div>
+
+    <script>
+        // Function to validate login form
+        function validateLogin() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('error-message');
+
+            if (!username || !password) {
+                errorMessage.textContent = "Username and Password are required!";
+            } else {
+                window.location.href = "welcome.html"; // Redirect to welcome page
+            }
+        }
+
+        // Function to display current date and time
+        function displayDateTime() {
+            const dateTimeElement = document.getElementById('date-time');
+            const now = new Date();
+            const date = now.toLocaleDateString(); // Format: MM/DD/YYYY
+            const time = now.toLocaleTimeString(); // Format: HH:MM:SS AM/PM
+            dateTimeElement.textContent = `${date} ${time}`;
+        }
+
+        // Update date and time every second
+        setInterval(displayDateTime, 1000);
+    </script>
+
+</body>
+</html>
